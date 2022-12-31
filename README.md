@@ -1,2 +1,2 @@
-# -DiscordRPC
+# DiscordRPC
 Discord RPC Maker
