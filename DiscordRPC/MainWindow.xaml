@@ -1,0 +1,54 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DiscordRPCGUI"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="DiscordRPCGUI.MainWindow"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
+        mc:Ignorable="d"
+        Background="#FF36393F"
+        Title="DiscordRPC" Height="700" Width="785" ResizeMode="CanMinimize" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250px"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="#FF202225">
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="150px"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Label Content="Presences" FontSize="28" FontWeight="Bold" Foreground="#FF8E9297" Height="40px" Width="140px" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,25,0,0"/>
+                <Border CornerRadius="50" Height="40px" Width="40px" Background="#FF8E918A" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,75,0,0" MouseEnter="Hover_Color_Enter" MouseLeave="Hover_Color_Leave">
+                    <Label Content="+" FontSize="44" Foreground="#FF36393F" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-18,0,0" FontWeight="Bold" MouseUp="AddConfig_MouseUp"/>
+                </Border>
+            </Grid>
+            <Grid Grid.Row="1" x:Name="Configs"/>
+        </Grid>
+        <Grid Grid.Column="1">
+            <TextBox x:Name="ConfigName" materialDesign:HintAssist.Hint="Config name" materialDesign:HintAssist.Foreground="#FF72767D" Height="40" Width="193" Background="#FF40444B" VerticalContentAlignment="Top" Padding="10,0,0,0" Foreground="#FFD3D4D5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="IBeam" VerticalAlignment="Top" Margin="60,25,0,0" CaretBrush="#FFB9BBBE" SelectionBrush="#FFB9BBBE" FontSize="14" HorizontalAlignment="Left"/>
+            <TextBox x:Name="AppID" materialDesign:HintAssist.Hint="App ID" materialDesign:HintAssist.Foreground="#FF72767D" Height="40" Width="193" Background="#FF40444B" VerticalContentAlignment="Top" Padding="10,0,0,0" Foreground="#FFD3D4D5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="IBeam" VerticalAlignment="Top" Margin="285,25,0,0" CaretBrush="#FFB9BBBE" SelectionBrush="#FFB9BBBE" FontSize="14" HorizontalContentAlignment="Left" HorizontalAlignment="Left"/>
+            <TextBox x:Name="Description" materialDesign:HintAssist.Hint="Description" materialDesign:HintAssist.Foreground="#FF72767D" Height="40" Width="194" Background="#FF40444B" VerticalContentAlignment="Top" Padding="10,0,0,0" Foreground="#FFD3D4D5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="IBeam" VerticalAlignment="Top" Margin="60,90,0,0" CaretBrush="#FFB9BBBE" SelectionBrush="#FFB9BBBE" FontSize="14" HorizontalContentAlignment="Left" HorizontalAlignment="Left"/>
+            <TextBox x:Name="State" materialDesign:HintAssist.Hint="State" materialDesign:HintAssist.Foreground="#FF72767D" Height="40" Width="193" Background="#FF40444B" VerticalContentAlignment="Top" Padding="10,0,0,0" Foreground="#FFD3D4D5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="IBeam" VerticalAlignment="Top" Margin="285,90,0,0" CaretBrush="#FFB9BBBE" SelectionBrush="#FFB9BBBE" FontSize="14" HorizontalContentAlignment="Left" HorizontalAlignment="Left"/>
+            <TextBox x:Name="LargeImg" materialDesign:HintAssist.Hint="Large image" materialDesign:HintAssist.Foreground="#FF72767D" Height="40" Width="194" Background="#FF40444B" VerticalContentAlignment="Top" Padding="10,0,0,0" Foreground="#FFD3D4D5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="IBeam" VerticalAlignment="Top" Margin="60,160,0,0" CaretBrush="#FFB9BBBE" SelectionBrush="#FFB9BBBE" FontSize="14" HorizontalContentAlignment="Left" HorizontalAlignment="Left"/>
+            <TextBox x:Name="LargeImgText" materialDesign:HintAssist.Hint="Large image text" materialDesign:HintAssist.Foreground="#FF72767D" Height="40" Width="193" Background="#FF40444B" VerticalContentAlignment="Top" Padding="10,0,0,0" Foreground="#FFD3D4D5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="IBeam" VerticalAlignment="Top" Margin="285,160,0,0" CaretBrush="#FFB9BBBE" SelectionBrush="#FFB9BBBE" FontSize="14" HorizontalContentAlignment="Left" HorizontalAlignment="Left"/>
+            <TextBox x:Name="SmallImg" materialDesign:HintAssist.Hint="Small image" materialDesign:HintAssist.Foreground="#FF72767D" Height="40" Width="194" Background="#FF40444B" VerticalContentAlignment="Top" Padding="10,0,0,0" Foreground="#FFD3D4D5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="IBeam" VerticalAlignment="Top" Margin="60,230,0,0" CaretBrush="#FFB9BBBE" SelectionBrush="#FFB9BBBE" FontSize="14" HorizontalContentAlignment="Left" HorizontalAlignment="Left"/>
+            <TextBox x:Name="SmallImgText" materialDesign:HintAssist.Hint="Small image text" materialDesign:HintAssist.Foreground="#FF72767D" Height="40" Width="193" Background="#FF40444B" VerticalContentAlignment="Top" Padding="10,0,0,0" Foreground="#FFD3D4D5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="IBeam" VerticalAlignment="Top" Margin="285,230,0,0" CaretBrush="#FFB9BBBE" SelectionBrush="#FFB9BBBE" FontSize="14" HorizontalContentAlignment="Left" HorizontalAlignment="Left"/>
+            <TextBox x:Name="Button1Text" materialDesign:HintAssist.Hint="Button 1 text" materialDesign:HintAssist.Foreground="#FF72767D" Height="40" Width="194" Background="#FF40444B" VerticalContentAlignment="Top" Padding="10,0,0,0" Foreground="#FFD3D4D5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="IBeam" VerticalAlignment="Top" Margin="60,300,0,0" CaretBrush="#FFB9BBBE" SelectionBrush="#FFB9BBBE" FontSize="14" HorizontalContentAlignment="Left" HorizontalAlignment="Left"/>
+            <TextBox x:Name="Button1URL" materialDesign:HintAssist.Hint="Button 1 URL" materialDesign:HintAssist.Foreground="#FF72767D" Height="40" Width="192" Background="#FF40444B" VerticalContentAlignment="Top" Padding="10,0,0,0" Foreground="#FFD3D4D5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="IBeam" VerticalAlignment="Top" Margin="285,300,0,0" CaretBrush="#FFB9BBBE" SelectionBrush="#FFB9BBBE" FontSize="14" HorizontalContentAlignment="Left" HorizontalAlignment="Left"/>
+            <TextBox x:Name="Button2Text" materialDesign:HintAssist.Hint="Button 2 text" materialDesign:HintAssist.Foreground="#FF72767D" Height="40" Width="194" Background="#FF40444B" VerticalContentAlignment="Top" Padding="10,0,0,0" Foreground="#FFD3D4D5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="IBeam" VerticalAlignment="Top" Margin="60,370,0,0" CaretBrush="#FFB9BBBE" SelectionBrush="#FFB9BBBE" FontSize="14" HorizontalContentAlignment="Left" HorizontalAlignment="Left"/>
+            <TextBox x:Name="Button2URL" materialDesign:HintAssist.Hint="Button 2 URL" materialDesign:HintAssist.Foreground="#FF72767D" Height="40" Width="193" Background="#FF40444B" VerticalContentAlignment="Top" Padding="10,0,0,0" Foreground="#FFD3D4D5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="IBeam" VerticalAlignment="Top" Margin="285,370,0,0" CaretBrush="#FFB9BBBE" SelectionBrush="#FFB9BBBE" FontSize="14" HorizontalContentAlignment="Left" HorizontalAlignment="Left"/>
+            <CheckBox x:Name="IsTimestamp" Content="Отсчёт времени" HorizontalAlignment="Left" Margin="60,420,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Normal" Foreground="#FF919598" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" BorderBrush="#FF36393F" Width="424" Height="40" Background="#FF8592A8"/>
+            <Button Name="StopBut" Content="Stop" HorizontalAlignment="Left" Margin="60,0,0,95" VerticalAlignment="Bottom" Width="192" Height="40" Background="#FF8E918A" BorderBrush="#FFB9BBBE" Foreground="#FF202225" FontWeight="Bold" FontSize="24" Cursor="Hand" Click="Stop_MouseUp" IsEnabled="False"/>
+            <Button Content="Minimaze" HorizontalAlignment="Left" Margin="285,0,0,95" VerticalAlignment="Bottom" Width="193" Height="40" Background="#FF8E918A" BorderBrush="#FFB9BBBE" Foreground="#FF202225" FontWeight="Bold" FontSize="24" Cursor="Hand" Click="Minimaze_MouseUp"/>
+            <Button Content="Save" HorizontalAlignment="Left" Margin="285,0,0,165" VerticalAlignment="Bottom" Width="191" Height="40" Background="#FF8E918A" BorderBrush="#FFB9BBBE" Foreground="#FF202225" FontWeight="Bold" FontSize="24" Cursor="Hand" Click="Save_MouseUp"/>
+            <Button Content="Start" HorizontalAlignment="Left" Margin="60,0,0,165" VerticalAlignment="Bottom" Width="191" Height="40" Background="#FF8E918A" BorderBrush="#FFB9BBBE" Foreground="#FF202225" FontWeight="Bold" FontSize="24" Cursor="Hand" Click="Start_MouseUp" mah:ControlsHelper.ContentCharacterCasing="Normal"/>
+            <Button x:Name="ReloadBut" Content="Reload" HorizontalAlignment="Left" Margin="60,0,0,25" VerticalAlignment="Bottom" Width="418" Height="40" Background="#FF8E918A" BorderBrush="#FFB9BBBE" Foreground="#FF202225" FontWeight="Bold" FontSize="24" Cursor="Hand" Click="Reload_MouseUp" mah:ControlsHelper.ContentCharacterCasing="Normal" Visibility="Visible" IsEnabled="False"/>
+        </Grid>
+    </Grid>
+</Window>
